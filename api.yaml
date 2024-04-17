@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: S3 Bucket API's
+  description: All API Related to S3.
+  version: 3.0
+servers:
+  - url: http://localhost:8000
+    description: Local server   
+paths:
+  /listbucket:
+    get:
+      summary: Returns a list of Bucket.
+      tags:
+        - Data
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of Bucket
+          content:
+            application/json:
+              schema:
+                type: array
+                Name:
+                  type: string
+                CreationDate:
+                  type: timestamp
+  /getfile:
+    get:
+      summary: Returns data From File.
+      tags:
+        - Data
+      parameters:
+        - in: query
+          name: fileName
+          required: true
+          schema:
+            type: string
+            minimum: 1
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of Object With key data and value Conatining data from file
+          content:
+            application/json:
+              schema:
+                type: array
+                data:
+                  type: string
+  /listobject:
+    get:
+      summary: Returns all File Details From bucket.
+      tags:
+        - Data
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of Object With key data and value Conatining data from file
+          content:
+            application/json:
+              schema:
+                type: array
+                Key:
+                  type: string
+                LastModified:
+                  type: timestamp
+                Size:
+                  type: integer
+  /deletebucket:
+    delete:
+      summary: Returns all File Details From bucket.
+      tags:
+        - Data
+      parameters:
+        - in: query
+          name: file
+          required: true
+          schema:
+            type: string
+            minimum: 1
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of Object With key data and value Conatining data from file
+          content:
+            application/json:
+              schema:
+                type: array
+                msg:
+                  type: string
+  /uploadfile:
+    post:
+      summary: Returns all File Details From bucket.
+      tags:
+        - Data
+      consumes:
+        - multipart/formData
+      parameters:
+        - in: formData
+          name: file
+          required: true
+          schema:
+            type: file
+          description: File to upload
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of Object With key data and value Conatining data from file
+          content:
+            application/json:
+              schema:
+                type: array
+                data:
+                  type: string
+  
+                             
