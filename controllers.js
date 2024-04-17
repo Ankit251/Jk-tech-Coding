@@ -55,7 +55,7 @@ function uplFile(req,res){
     console.log("inside data");
     const form = new formidable.IncomingForm();
     form.parse(req, (err, fields, files) => {
-        console.log(files);
+        
         if (err) {
           return res.status(500).json({ error: 'Internal server error' });
         }

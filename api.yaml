@@ -65,7 +65,7 @@ paths:
                   type: timestamp
                 Size:
                   type: integer
-  /deletebucket:
+  /deleteobject:
     delete:
       summary: Returns all File Details From bucket.
       tags:

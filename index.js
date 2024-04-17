@@ -50,13 +50,13 @@ app.get("/getfile", getFileFromS3);
 
 app.post("/uploadfile", uplFile);
 
-app.post("/uplfile",uplFile)
+
 
 app.get("/listobject",listObjectBucket)
 
 app.get("/listbucket",listBucket)
 
-app.delete("/deletebucket",deleteBucket)
+app.delete("/deleteobject",deleteBucket)
 
 
 app.listen(8000)
