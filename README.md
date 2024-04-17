@@ -13,7 +13,8 @@ To test the API, follow these steps:
 
 ## Usage
 
-After installation, run the following command to start the server:
+After installation, run the following command to start the server: 
+    nodemon index.js
 
 ## Testing
 
