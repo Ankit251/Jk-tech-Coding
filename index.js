@@ -17,22 +17,6 @@ const multer = require('multer');
 var express = require("express");
 var fs = require('fs');
 
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-    const uploadDir = './uploads';
-    // Create the 'uploads' directory if it doesn't exist
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir);
-    }
-      cb(null, uploadDir); // Save uploaded files to the 'uploads' directory
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname); // Use the original file name
-    }
-  });
-
-const upload = multer({ storage: storage });
 var app = express();
 
 
