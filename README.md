@@ -20,7 +20,7 @@ After installation, run the following command to start the server:
 
 You can test all the APIs using [Postman](https://www.postman.com/):
 - Import the provided Postman collection.
-- Test each API endpoint according to your requirements.
+- Test each API endpoint.
 
 Additionally, you can use Swagger UI for testing. Access Swagger UI at [localhost:8000/api-docs](http://localhost:8000/api-docs):
 - Note: The file upload API may not function in Swagger UI due to browser compatibility issues. Please use Postman for testing this specific API.
